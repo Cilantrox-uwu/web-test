@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elige tu idioma</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #666;
+        }
+        #video-container {
+            display: none;
+            margin-top: 20px;
+        }
+        iframe {
+            width: 640px;
+            height: 360px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Elige tu idioma / Choose your language</h1>
+    <button onclick="showVideo('es')">Español</button>
+    <button onclick="showVideo('en')">English</button>
+
+    <div id="video-container">
+        <iframe id="video" src="" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function showVideo(language) {
+            var videoContainer = document.getElementById('video-container');
+            var video = document.getElementById('video');
+
+            if (language === 'es') {
+                video.src = 'https://www.youtube.com/embed/ybW06A8IkAo';
+            } else if (language === 'en') {
+                video.src = 'https://www.youtube.com/embed/vHhXDqEev3g';
+            }
+
+            videoContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
